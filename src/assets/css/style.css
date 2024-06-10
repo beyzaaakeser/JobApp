@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.btn-container {
+  display: flex;
+  align-items: center;
+}
+
+.submit-btn {
+  font-weight: bold;
+  padding: 1em 2em;
+  border: none;
+  font-family: "Poppins";
+  background-color: white;
+  border-radius: 10px;
+  color: #007bff;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  width: 60%;
+}
+
+.submit-btn span:not(:nth-child(6)) {
+  background-color: #007bff;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: 0.6s ease;
+}
+
+.submit-btn span:nth-child(6) {
+  position: relative;
+}
+
+.submit-btn span:nth-child(1) {
+  transform: translate(-53px, -64px);
+}
+
+.submit-btn span:nth-child(2) {
+  transform: translate(-96px, 25px);
+}
+
+.submit-btn span:nth-child(3) {
+  transform: translate(4px, 29px);
+}
+
+.submit-btn span:nth-child(4) {
+  transform: translate(56px, 25px);
+}
+
+.submit-btn span:nth-child(5) {
+  transform: translate(56px, 61px);
+}
+
+.submit-btn:hover span:not(:nth-child(6)) {
+  transform: translate(-50%, -50%) scale(4);
+  transition: 1.5s ease;
+  color: #ffffff;
+}
+
+.submit-btn:hover span:nth-child(6) {
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .btn-container {
+    margin-top: 28px;
+    align-items: start;
+  }
+  .btn-container.btn-fil {
+    margin-top: 0;
+  }
+}
+.add-page, .filter-sec {
+  min-height: 90vh;
+  display: grid;
+  place-items: center;
+  color: #002853;
+}
+
+.container {
+  width: 70vw;
+  max-width: 700px;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+  transform: translateY(-5px);
+  position: relative;
+  background: url("../../../public/main-img.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 50px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.container form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+.container div {
+  display: flex;
+  flex-direction: column;
+}
+.container div input,
+.container div select {
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 5px;
+  font-family: "Poppins";
+  border: none;
+}
+.container div input:focus,
+.container div select:focus {
+  outline: none;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.container h2,
+.container form {
+  position: relative;
+  z-index: 1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f2f2f2;
+  color: #007bff;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  align-items: center;
+}
+header nav {
+  display: flex;
+  gap: 20px;
+}
+header nav a {
+  color: #007bff;
+  font-size: 20px;
+}
+header nav .active {
+  text-shadow: 0 0 20px black;
+}/*# sourceMappingURL=style.css.map */
