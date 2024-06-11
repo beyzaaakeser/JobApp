@@ -60,8 +60,8 @@
 }
 
 .bin-button {
-  width: 45px;
-  height: 45px;
+  width: 35px;
+  height: 35px;
   display: flex;
   flex-direction: column;
   background-color: gray;
@@ -73,7 +73,7 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   cursor: pointer;
   overflow: hidden;
-  padding: 3px;
+  padding: 6px;
 }
 
 .bin-buttom {
@@ -84,9 +84,47 @@
 .bin-top{
   width: 14px;
   transform-origin: right ;
+  transition-duration: 0.4s;
+  z-index: 2;
+}
+.bin-button:hover{
+  background-color: rgb(177, 0, 0);
+  border: 2px solid rgb(177, 0, 0);
 }
 
+.bin-button:hover .bin-top{
+  transform: rotate(45deg);
+  transition: all 0.4s ease-in-out;
+}
 
+.bin-button:active{
+  transform: scale(0.9);
+}
+
+.garbage{
+  position: absolute;
+  width: 12px;
+  height: auto;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.6s ease;
+
+}
+
+.bin-button:hover .garbage{
+  animation: throw 0.6s linear;
+}
+
+@keyframes throw{
+  from{
+    transform: translate(-400%, -700%);
+    opacity: 0;
+  }
+  to{
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+}
 
 @media (min-width: 768px) {
   .btn-container {

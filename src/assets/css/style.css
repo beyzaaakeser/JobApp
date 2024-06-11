@@ -66,8 +66,8 @@
 }
 
 .bin-button {
-  width: 45px;
-  height: 45px;
+  width: 35px;
+  height: 35px;
   display: flex;
   flex-direction: column;
   background-color: gray;
@@ -79,7 +79,7 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   cursor: pointer;
   overflow: hidden;
-  padding: 3px;
+  padding: 6px;
 }
 
 .bin-buttom {
@@ -90,8 +90,47 @@
 .bin-top {
   width: 14px;
   transform-origin: right;
+  transition-duration: 0.4s;
+  z-index: 2;
 }
 
+.bin-button:hover {
+  background-color: rgb(177, 0, 0);
+  border: 2px solid rgb(177, 0, 0);
+}
+
+.bin-button:hover .bin-top {
+  transform: rotate(45deg);
+  transition: all 0.4s ease-in-out;
+}
+
+.bin-button:active {
+  transform: scale(0.9);
+}
+
+.garbage {
+  position: absolute;
+  width: 12px;
+  height: auto;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.bin-button:hover .garbage {
+  animation: throw 0.6s linear;
+}
+
+@keyframes throw {
+  from {
+    transform: translate(-400%, -700%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+}
 @media (min-width: 768px) {
   .btn-container {
     margin-top: 28px;
@@ -102,15 +141,19 @@
   }
 }
 .add-page, .filter-sec {
-  min-height: 90vh;
   display: grid;
   place-items: center;
   color: #002853;
+  padding: 20px 0;
+}
+@media (min-width: 568px) {
+  .add-page, .filter-sec {
+    padding: 50px 0;
+  }
 }
 
 .container {
-  width: 70vw;
-  max-width: 700px;
+  width: 95%;
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
   transform: translateY(-5px);
   position: relative;
@@ -143,6 +186,11 @@
 .container div input:focus,
 .container div select:focus {
   outline: none;
+}
+@media (min-width: 568px) {
+  .container {
+    max-width: 700px;
+  }
 }
 
 .container::before {
@@ -196,4 +244,81 @@ header nav a {
 }
 header nav .active {
   text-shadow: 0 0 20px black;
+}
+@media (max-width: 420px) {
+  header h2 {
+    font-size: 1.3rem;
+  }
+  header nav a {
+    font-size: 1rem;
+  }
+}
+
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  padding: 20px 20px;
+  color: rgb(70, 70, 70);
+}
+.cards-wrapper .card {
+  background-color: #e4e7e8;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 3px rgb(180, 180, 180);
+}
+.cards-wrapper .card .head {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+.cards-wrapper .card section:nth-of-type(1) {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 20px;
+  justify-content: flex-start;
+}
+.cards-wrapper .card section:nth-of-type(1) .letter {
+  background: #49a0fd;
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  font-size: 30px;
+  font-family: "Poppins";
+  font-weight: bolder;
+  text-shadow: 0 0 5px gray;
+  box-shadow: 0 0 5px gray;
+}
+.cards-wrapper .card section:nth-of-type(1) .info {
+  font-size: 20px;
+}
+.cards-wrapper .card section:nth-of-type(1) .info p:nth-of-type(2) {
+  font-weight: bold;
+}
+.cards-wrapper .card .body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 20px;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+}
+.cards-wrapper .card .body .field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cards-wrapper .card .body .status {
+  display: flex;
+}
+.cards-wrapper .card .body .status p {
+  padding: 6px 15px;
+  border-radius: 10px;
+}
+@media (min-width: 768px) {
+  .cards-wrapper {
+    padding: 20px 60px;
+  }
 }/*# sourceMappingURL=style.css.map */

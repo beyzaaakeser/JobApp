@@ -16,11 +16,11 @@ const AutoInput = ({ label, name }) => {
   return (
     <div>
       <label htmlFor={label}>{label}</label>
-      <input type="text" id={label} name="" required />
+      <input type="text" id={label} name={name} required />
 
       <datalist key={name}>
-        {options.map((i) => (
-          <option value={i} />
+        {options.map((i,index) => (
+          <option key={index} value={i} />
         ))}
       </datalist>
     </div>
