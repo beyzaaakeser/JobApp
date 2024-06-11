@@ -1,4 +1,4 @@
-.btn-container{
+.btn-container {
   display: flex;
   align-items: center;
 }
@@ -15,7 +15,6 @@
   cursor: pointer;
   overflow: hidden;
   width: 60%;
-  
 }
 
 .submit-btn span:not(:nth-child(6)) {
@@ -56,17 +55,46 @@
   color: #ffffff;
 }
 
-.submit-btn:hover span:nth-child(6){
-    color: white;
+.submit-btn:hover span:nth-child(6) {
+  color: white;
+}
+
+.bin-button {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  flex-direction: column;
+  background-color: gray;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 2px solid gray;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 3px;
+}
+
+.bin-buttom {
+  width: 12px;
+  z-index: 2;
+}
+
+.bin-top{
+  width: 14px;
+  transform-origin: right ;
 }
 
 
-@media (min-width:768px) {
-  .btn-container{
+
+@media (min-width: 768px) {
+  .btn-container {
     margin-top: 28px;
     align-items: start;
   }
-  .btn-container.btn-fil{
+
+  .btn-container.btn-fil {
     margin-top: 0;
   }
 }
