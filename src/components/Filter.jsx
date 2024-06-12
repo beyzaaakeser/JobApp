@@ -1,13 +1,50 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Select from './Select';
 import { statusOpt, typeOpt, sortOpt } from '../constants';
 import SubmitButton from './SubmitButton';
-
+import { useDispatch } from 'react-redux';
+import { setError, setJobs, setLoading } from '../app/slices/jobSlice';
+import api from '../utils/api';
 const Filter = () => {
+  const dispatch = useDispatch();
   const [text, setText] = useState();
   const [status, setStatus] = useState();
   const [type, setType] = useState();
   const [sort, setSort] = useState();
+
+  useEffect(() => {
+    const sortParam =
+      sort === 'a-z' || sort === 'z-a'
+        ? 'company'
+        : sort === 'latest' || sort === 'earliest'
+        ? 'date'
+        : undefined;
+
+    const orderParam =
+      sort === 'a-z'
+        ? 'asc'
+        : sort === 'z-a'
+        ? 'desc'
+        : sort === 'latest'
+        ? 'desc'
+        : sort === 'earliest'
+        ? 'asc'
+        : undefined;
+
+    const params = {
+      q: text,
+      _sort: sortParam,
+      _order: orderParam,
+      type: type || undefined,
+      status: status || undefined,
+    };
+    dispatch(setLoading());
+
+    api
+      .get('/jobs', { params })
+      .then((res) => dispatch(setJobs(res.data)))
+      .catch((err) => dispatch(setError(err.message)));
+  }, [text,sort,type,status]);
 
   const handleReset = (e) => {
     e.preventDefault();
@@ -16,7 +53,7 @@ const Filter = () => {
     setSort();
     setStatus();
     setType();
-    
+
     // inputları sıfırla
     e.target.reset();
   };
