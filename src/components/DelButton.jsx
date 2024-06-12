@@ -1,21 +1,26 @@
 import React from 'react';
-import api from "../utils/api";
-import { useDispatch } from "react-redux";
-import { deleteJob, setError } from "../app/slices/jobSlice";
+import api from '../utils/api';
+import { useDispatch } from 'react-redux';
+import { deleteJob, setError } from '../app/slices/jobSlice';
 
 import { toast } from 'react-toastify';
-const DelButton = ({id}) => {
+const DelButton = ({ id }) => {
   const dispatch = useDispatch();
-  const handleClick = () =>{
-    if(confirm("Are you sure you want to delete?")){
-        api.delete(`/jobs/${id}`).then(()=>{
-          dispatch(deleteJob(id))
-          toast.warn("Application Removed")
+  const handleClick = () => {
+    if (confirm('Are you sure you want to delete?')) {
+      api
+        .delete(`/jobs/${id}`)
+        .then(() => {
+          dispatch(deleteJob(id));
+          toast.warn('Job advertisement removed.');
         })
+        .catch(() =>
+          toast.error('An error occurred while removing the job advertisement.')
+        );
     }
-  }
+  };
   return (
-    <button onClick={handleClick}  className="bin-button">
+    <button onClick={handleClick} className="bin-button">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
