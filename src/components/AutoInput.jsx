@@ -13,13 +13,14 @@ const AutoInput = ({ label, name }) => {
   // Setin dönderdiği nesneyi diziye cevirir.
   const options = Array.from(filteredSet);
 
+  /* ???????????????? datalistdeki key yerine id mi olacak anlamadım ?????????*/
   return (
     <div>
       <label htmlFor={label}>{label}</label>
       <input type="text" id={label} name={name} required />
 
       <datalist key={name}>
-        {options.map((i,index) => (
+        {options.map((i, index) => (
           <option key={index} value={i} />
         ))}
       </datalist>

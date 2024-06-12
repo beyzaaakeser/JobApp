@@ -1,13 +1,21 @@
 import React from 'react';
-/* 
 import api from "../utils/api";
-import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { deleteJob, setError } from "../app/slices/jobSlice";
-*/
-const DelButton = () => {
+
+import { toast } from 'react-toastify';
+const DelButton = ({id}) => {
+  const dispatch = useDispatch();
+  const handleClick = () =>{
+    if(confirm("Are you sure you want to delete?")){
+        api.delete(`/jobs/${id}`).then(()=>{
+          dispatch(deleteJob(id))
+          toast.warn("Application Removed")
+        })
+    }
+  }
   return (
-    <button  className="bin-button">
+    <button onClick={handleClick}  className="bin-button">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
