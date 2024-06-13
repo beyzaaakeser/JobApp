@@ -337,18 +337,25 @@ header nav .active {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 10px;
   padding: 10px;
-  margin-top: 50px;
+  color: crimson;
+}
+.error h1 {
+  font-size: 3rem;
+  margin: 0 !important;
 }
 .error p {
   font-size: 18px;
+  font-style: italic;
+  color: #007bff;
 }
 .error .text {
-  color: crimson;
+  color: #007bff;
 }
 .error .button {
   width: 150px;
+  margin-top: 25px;
   border: 2px solid crimson;
   color: crimson;
   padding: 8px 10px;
@@ -357,4 +364,9 @@ header nav .active {
   font-family: "Poppins";
   border-radius: 10px;
   box-shadow: 2px 2px 2px gray;
+  transition: all 0.4s ease-in-out;
+}
+.error .button:hover {
+  scale: 1.03;
+  box-shadow: 0 0 5px gray;
 }/*# sourceMappingURL=style.css.map */

@@ -7,14 +7,13 @@ import { v4 } from 'uuid';
 import api from '../utils/api';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
-import { createJob } from '../app/slices/jobSlice';
+import { createJob, setError } from '../app/slices/jobSlice';
 import { useNavigate } from 'react-router-dom';
 const AddJob = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-
     e.preventDefault();
     // Form Data Olustur
     const formData = new FormData(e.target);
@@ -39,9 +38,12 @@ const AddJob = () => {
         // stora yeni veri kaydet
         dispatch(createJob(newJobData));
         // işlem başarılı olursa anasayfaya yönlendir
-        navigate("/")
+        navigate('/');
       })
-      .catch(() => toast.error('Hata Oluştu'));
+      .catch((err) => {
+        dispatch(setError(err.message));
+        toast.error('An error occurred!');
+      });
   };
   return (
     <div className="add-page">
@@ -52,8 +54,8 @@ const AddJob = () => {
           <AutoInput label={'Position'} name={'position'} />
           <AutoInput label={'Company'} name={'company'} />
           <AutoInput label={'Location'} name={'location'} />
-          <Select label={'Status'} options={statusOpt} name={"status"} />
-          <Select label={'Types'} options={typeOpt} name={"type"} />
+          <Select label={'Status'} options={statusOpt} name={'status'} />
+          <Select label={'Types'} options={typeOpt} name={'type'} />
           <div className="btn-container">
             <SubmitButton text={'Save'} />
           </div>

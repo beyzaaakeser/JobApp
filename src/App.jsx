@@ -5,12 +5,15 @@ import Header from './components/Header';
 import api from './utils/api';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { setJobs, setLoading } from './app/slices/jobSlice';
+import { setError, setJobs, setLoading } from './app/slices/jobSlice';
 
 function App() {
   const dispatch = useDispatch();
   const getJobs = () => {
-    api.get('/jobs').then((response) => dispatch(setJobs(response.data)));
+    api
+      .get('/jobs')
+      .then((response) => dispatch(setJobs(response.data)))
+      .catch((err) => dispatch(setError(err.message)));
   };
 
   useEffect(() => {
@@ -22,7 +25,7 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<JobList />} />
+        <Route path="/" element={<JobList retry={getJobs()} />} />
         <Route path="/new" element={<AddJob />} />
       </Routes>
     </BrowserRouter>
