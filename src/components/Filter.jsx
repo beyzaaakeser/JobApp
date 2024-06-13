@@ -16,7 +16,7 @@ const Filter = () => {
   // DEBOUNCE : kötü cihazlarda kasma yapmaması ve apide trafik oluşturmaması için geciktirme
   useEffect(() => {
     if (text === undefined) return;
-    const timer = setTimeout(() => setDebouncedText(text), 700);
+    const timer = setTimeout(() => setDebouncedText(text), 600);
 
     return () => {
       clearTimeout(timer);
@@ -70,6 +70,7 @@ const Filter = () => {
     setStatus();
     setType();
     setSort();
+    setDebouncedText();
 
     // inputları sıfırla
     e.target.reset();

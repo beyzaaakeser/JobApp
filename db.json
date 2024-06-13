@@ -62,6 +62,15 @@
       "type": "Tam Zamanlı",
       "id": "f983034e-5d76-4317-8368-502c4c8a8e78",
       "date": 1716756646867
+    },
+    {
+      "id": "5eef4631-1956-4e1a-890d-77da5de97db2",
+      "position": "Full Stack Developer",
+      "company": "Mimcode",
+      "location": "konya",
+      "status": "Continues",
+      "type": "Full Time",
+      "date": 1718311349251
     }
   ]
 }

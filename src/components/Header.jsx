@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header>
       <h2>
-        Job <span> Tracking</span>
+        Job <span> Searching</span>
       </h2>
       <nav>
         <NavLink to={'/'}>Job List</NavLink>
