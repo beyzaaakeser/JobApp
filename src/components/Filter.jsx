@@ -11,10 +11,18 @@ const Filter = () => {
   const [status, setStatus] = useState();
   const [type, setType] = useState();
   const [sort, setSort] = useState();
+  const [debouncedText, setDebouncedText] = useState();
 
+  // DEBOUNCE : kötü cihazlarda kasma yapmaması ve apide trafik oluşturmaması için geciktirme
+  useEffect(() => {
+    if (text === undefined) return;
+    const timer = setTimeout(() => setDebouncedText(text), 700);
 
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [text]);
 
-  
   // Filtreleme veya sıralama ile ilgili bir state değiştiğinde apiden güncel verileri alma
   useEffect(() => {
     const sortParam =
@@ -53,7 +61,7 @@ const Filter = () => {
         dispatch(setJobs(filteredJobs));
       })
       .catch((err) => dispatch(setError(err.message)));
-  }, [text, sort, type, status]);
+  }, [debouncedText, sort, type, status]);
 
   const handleReset = (e) => {
     e.preventDefault();
