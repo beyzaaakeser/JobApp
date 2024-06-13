@@ -7,7 +7,6 @@ import Card from '../components/Card';
 
 const JobList = () => {
   const { jobs, error, isLoading } = useSelector((store) => store);
-  console.log(jobs);
   return (
     <div className="list-page">
       <Filter />

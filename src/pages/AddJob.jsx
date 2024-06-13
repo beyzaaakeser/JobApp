@@ -14,6 +14,7 @@ const AddJob = () => {
   const navigate = useNavigate()
 
   const handleSubmit = (e) => {
+
     e.preventDefault();
     // Form Data Olustur
     const formData = new FormData(e.target);

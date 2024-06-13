@@ -42,11 +42,11 @@ header {
       text-shadow: 0 0 20px black;
     }
   }
-  @media (max-width:420px) {
-    h2{
+  @media (max-width: 420px) {
+    h2 {
       font-size: 1.3rem;
     }
-    nav a{
+    nav a {
       font-size: 1rem;
     }
   }
@@ -54,11 +54,11 @@ header {
 
 .cards-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
   gap: 30px;
   padding: 20px 20px;
   color: rgb(70, 70, 70);
-
+  justify-content: center;
   .card {
     background-color: #e4e7e8;
     padding: 20px;
@@ -121,7 +121,7 @@ header {
     }
   }
 
-  @media (min-width:768px) {
-    padding: 20px 60px;
+  @media (min-width: 870px) {
+    grid-template-columns: repeat(auto-fit, minmax(350px,400px));
   }
 }

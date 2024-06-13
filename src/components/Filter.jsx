@@ -12,6 +12,10 @@ const Filter = () => {
   const [type, setType] = useState();
   const [sort, setSort] = useState();
 
+
+
+  
+  // Filtreleme veya sıralama ile ilgili bir state değiştiğinde apiden güncel verileri alma
   useEffect(() => {
     const sortParam =
       sort === 'a-z' || sort === 'z-a'
@@ -41,18 +45,23 @@ const Filter = () => {
     dispatch(setLoading());
 
     api
-      .get('/jobs', { params })
-      .then((res) => dispatch(setJobs(res.data)))
+      .get('/jobs', { params: { q: 'text' } })
+      .then((res) => {
+        const filteredJobs = res.data.filter((job) =>
+          job.position.includes(params.q)
+        );
+        dispatch(setJobs(filteredJobs));
+      })
       .catch((err) => dispatch(setError(err.message)));
-  }, [text,sort,type,status]);
+  }, [text, sort, type, status]);
 
   const handleReset = (e) => {
     e.preventDefault();
     // stateleri sıfırla
     setText();
-    setSort();
     setStatus();
     setType();
+    setSort();
 
     // inputları sıfırla
     e.target.reset();
@@ -64,7 +73,7 @@ const Filter = () => {
 
         <form onSubmit={handleReset}>
           <div>
-            <label htmlFor="">Search</label>
+            <label>Search</label>
             <input type="text" onChange={(e) => setText(e.target.value)} />
           </div>
           <Select

@@ -260,6 +260,7 @@ header nav .active {
   gap: 30px;
   padding: 20px 20px;
   color: rgb(70, 70, 70);
+  justify-content: center;
 }
 .cards-wrapper .card {
   background-color: #e4e7e8;
@@ -317,8 +318,8 @@ header nav .active {
   padding: 6px 15px;
   border-radius: 10px;
 }
-@media (min-width: 768px) {
+@media (min-width: 870px) {
   .cards-wrapper {
-    padding: 20px 60px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 400px));
   }
 }/*# sourceMappingURL=style.css.map */
