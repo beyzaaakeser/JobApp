@@ -53,7 +53,7 @@ const Filter = () => {
     dispatch(setLoading());
 
     api
-      .get('/jobs', { params: { q: 'text' } })
+      .get('/jobs', { params })
       .then((res) => {
         const filteredJobs = res.data.filter((job) =>
           job.position.includes(params.q)
