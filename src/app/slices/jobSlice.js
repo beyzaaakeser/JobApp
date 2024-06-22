@@ -24,12 +24,12 @@ const jobSlice = createSlice({
     },
     createJob: (state, action) => {
       state.isLoading = false;
-      state.error = null
+      state.error = null;
       state.jobs.push(action.payload);
     },
     deleteJob: (state, action) => {
       state.isLoading = false;
-      state.error = null
+      state.error = null;
       const index = state.jobs.findIndex((i) => i.id === action.payload);
       state.jobs.splice(index, 1);
     },

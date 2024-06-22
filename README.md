@@ -23,6 +23,8 @@ This platform, which I developed to facilitate and accelerate the job search and
 
 <h4>IMAGES</h4>
 
-![]()
+![](/public/addlist.png)
 
-![]()
+![](/public/joblist.png)
+
+![](/public/filter.png)

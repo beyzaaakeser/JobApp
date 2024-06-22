@@ -19,15 +19,6 @@
       "date": 1712607002328
     },
     {
-      "position": "Marketing Manager",
-      "company": "Microsoft",
-      "location": "Seattle",
-      "status": "Rejected",
-      "type": "Part Time",
-      "id": "d7c4d757-4957-488d-a7f2-f8db05aa2c46",
-      "date": 1318607013502
-    },
-    {
       "position": "Data Scientist",
       "company": "Microsoft",
       "location": "Menlo Park",
@@ -71,6 +62,15 @@
       "status": "Continues",
       "type": "Full Time",
       "date": 1718311349251
+    },
+    {
+      "id": "ad287155-c54a-4b23-9676-37a53ccec3a5",
+      "position": "Backend Developer",
+      "company": "Apple",
+      "location": "London",
+      "status": "Interview",
+      "type": "Full Time",
+      "date": 1719061577293
     }
   ]
 }

@@ -369,4 +369,23 @@ header nav .active {
 .error .button:hover {
   scale: 1.03;
   box-shadow: 0 0 5px gray;
+}
+
+.result-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  background-color: #e4e7e8;
+  justify-content: center;
+  margin: auto;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 3px rgb(180, 180, 180);
+  color: rgb(70, 70, 70);
+}
+.result-wrapper .head {
+  text-align: center;
+  padding-bottom: 5px;
+  color: crimson;
 }/*# sourceMappingURL=style.css.map */

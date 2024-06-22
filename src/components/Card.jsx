@@ -22,7 +22,7 @@ const Card = ({ job }) => {
           </div>
         </section>
         <section>
-          <DelButton id={job.id}/>
+          <DelButton id={job.id} />
         </section>
       </div>
 
