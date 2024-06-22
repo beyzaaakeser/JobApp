@@ -28,15 +28,6 @@
       "date": 1715607078538
     },
     {
-      "position": "Data Scientist",
-      "company": "Microsoft",
-      "location": "Menlo Park",
-      "status": "Interview",
-      "type": "Full Time",
-      "id": "7fb211e4-a53e-4804-b949-9a3d25b8e67c",
-      "date": 1712608152577
-    },
-    {
       "position": "Marketing Manager",
       "company": "Udemig",
       "location": "İstanbul",
@@ -44,15 +35,6 @@
       "type": "Full Time",
       "id": "b7f2b2dc-7b84-41e5-bbbe-5850785f02d6",
       "date": 1716756086117
-    },
-    {
-      "position": "Marketing Manager",
-      "company": "Emartech",
-      "location": "İstanbul",
-      "status": "Interview",
-      "type": "Full Time",
-      "id": "f983034e-5d76-4317-8368-502c4c8a8e78",
-      "date": 1716756646867
     },
     {
       "id": "5eef4631-1956-4e1a-890d-77da5de97db2",
@@ -71,6 +53,15 @@
       "status": "Interview",
       "type": "Full Time",
       "date": 1719061577293
+    },
+    {
+      "id": "b1437d18-5928-45c2-bda6-95a2a579efa5",
+      "position": "Full Stack Developer",
+      "company": "Huawei",
+      "location": "Amsterdam",
+      "status": "Interview",
+      "type": "Remote",
+      "date": 1719065514362
     }
   ]
 }

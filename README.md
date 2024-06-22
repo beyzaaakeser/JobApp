@@ -19,7 +19,7 @@ This platform, which I developed to facilitate and accelerate the job search and
 
 <h4>GIF</h5>
 
-![]()
+![](/public/myjobbappgif.gif)
 
 <h4>IMAGES</h4>
 
